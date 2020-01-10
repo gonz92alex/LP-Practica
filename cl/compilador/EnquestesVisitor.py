@@ -1,6 +1,5 @@
 # Generated from Enquestes.g by ANTLR 4.7.2
 from antlr4 import *
-import networkx as nx
 
 from models import Enquesta, Item, Alternativa, OpcioAlternativa, Pregunta, Resposta, OpcioResposta
 
@@ -19,6 +18,7 @@ class EnquestesVisitor(ParseTreeVisitor):
         'ITEM': [],
         'ALTERNATIVA': []
     }
+
     def update_refs(self):
         for i in self.types['ITEM']:
             item = self.ids[i]
@@ -39,9 +39,6 @@ class EnquestesVisitor(ParseTreeVisitor):
             for item in items:
                 new_items.append(self.ids[item.get_id()])
             self.ids[i].set_items(new_items)
-
-
-
 
     # Visit a parse tree produced by EnquestesParser#root.
     def visitRoot(self, ctx: EnquestesParser.RootContext):

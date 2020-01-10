@@ -1,44 +1,30 @@
 # Practica LP Alejandro Gonzalez
 
-Telegram bot for answering polls with id
+Bot de Telegram para contestar encuestas para la asignatura de LP de la FIB
 
-## Getting Started
+## Ejecucion
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+Para ejecutar el código del compilador, ejecutar la siguiente instrucción en la consola.
+```{shell}
+python test.enquesta.py ../data/pregreg.txt
 ```
-Give the example
+Este compilador, elige el fichero que se le pasa como primer argumento y genera un fichero modelado.p en la carpeta data y un grafo en forma de imagen en la carpeta img
+
+Con el fichero de prueba del enunciado se genera el siguiente grafo:
+![Alt text](img/E.png "Grafo encuesta E")
+
+Para ejecutar el bot de Telegram necesitamos el fichero modelado.p, ya que sin las estructura de la encuestas no sabrá que ha de mostrar.
+El sistema puede obtener múltiples encuestas de un fichero a compilar.
+El bot se ejecuta con el siguiente comando:
+
+ 
+```{shell}
+python bot.py 
 ```
+Link al [bot](https://web.telegram.org/#/im?p=@AlejandroCompiletBot).
 
-And repeat
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Authors
+## Autor
 
 * **Alejandro Gonzalez Garcia**
 

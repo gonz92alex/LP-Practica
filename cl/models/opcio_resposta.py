@@ -4,7 +4,7 @@ class OpcioResposta(object):
         self.resposta = resposta
 
     def get_resposta(self):
-        return self.pregunta
+        return self.resposta
 
     def get_value(self):
         return self.value

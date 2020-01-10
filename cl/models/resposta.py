@@ -27,8 +27,12 @@ class Resposta(object):
 
     def get_respostes_str(self):
         sortida = ''
+        template = '{value}: {resposta}\n'
         for resp in self.respostes:
-            sortida += resp.get_value() + ': ' + resp.get_resposta()
+            sortida += template.format(
+                value=resp.get_value(),
+                resposta=resp.get_resposta())
+        return sortida
 
     def add_resposta(self, resposta: OpcioResposta):
         if resposta not in self.respostes:

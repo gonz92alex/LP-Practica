@@ -1,7 +1,7 @@
-/start    -> Inicia el chatbot
-/help     -> Muestra la ayuda del chatbot
-/author   -> Enseña los datos del autor del chatbot
-/quiz <idEnquesta>
-/bar <idPregunta>
-/pie <idPregunta>
-/report
+/start               -> Inicia el chatbot
+/help                -> Muestra la ayuda del chatbot
+/author              -> Enseña los datos del autor del chatbot
+/quiz <idEnquesta>   -> Inicia una encuesta
+/bar <idPregunta>    -> Muestra un grafico de barras de la pregunta
+/pie <idPregunta>    -> Muestra un grafico en forma de tarta de la pregunta
+/report              -> Muestra un resumen de los resultados de la encuesta
