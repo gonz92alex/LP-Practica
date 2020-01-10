@@ -1,18 +1,18 @@
-from .opcio_resposta import OpcioResposta
 import networkx as nx
+
+from .opcio_resposta import OpcioResposta
+
 
 class Resposta(object):
     id = None
     respostes = None
 
-    def __init__(self, id: str, respostes: list=None, resposta=None):
+    def __init__(self, id: str, respostes: list = None, resposta=None):
         self.id = id
         self.respostes = respostes if respostes else []
         if resposta:
             resp = resposta.get_respostes()
             self.respostes = resp if len(resp) > 0 else respostes
-
-
 
     def get_respostes(self):
         return self.respostes

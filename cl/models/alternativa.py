@@ -1,8 +1,9 @@
 from .opcio_alternativa import OpcioAlternativa
 
-class Alternativa(object):
 
-    def __init__(self, id: str, origen=None, alternativas:list=None, alternativa=None):
+class Alternativa(object):
+    def __init__(self, id: str, origen=None, alternativas: list = None,
+                 alternativa=None):
         self.id = id
         alternativas = alternativas if alternativas else []
         if alternativa:
@@ -12,7 +13,6 @@ class Alternativa(object):
         else:
             self.origen = origen
             self.alternativas = alternativas
-
 
     def get_id(self):
         return self.id

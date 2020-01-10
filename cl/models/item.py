@@ -1,11 +1,12 @@
+import networkx as nx
+
 from .pregunta import Pregunta
 from .resposta import Resposta
-import networkx as nx
 
 
 class Item(object):
-
-    def __init__(self, id: str, pregunta: Pregunta = None, resposta: Resposta = None, item=None):
+    def __init__(self, id: str, pregunta: Pregunta = None,
+                 resposta: Resposta = None, item=None):
         self.id = id
         if item:
             self.pregunta = item.get_pregunta() or pregunta
@@ -23,14 +24,11 @@ class Item(object):
     def set_pregunta(self, pregunta: Pregunta):
         self.pregunta = pregunta
 
-
     def get_resposta(self):
         return self.resposta
 
-
     def set_resposta(self, resposta: Resposta):
         self.resposta = resposta
-
 
     def get_graph(self):
         G = nx.compose(self.pregunta.get_graph(),

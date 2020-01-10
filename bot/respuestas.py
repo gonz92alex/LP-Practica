@@ -1,13 +1,10 @@
 import matplotlib.pyplot as plt
 
+
 class Respuestas(object):
-
-
     def __init__(self, id):
         self.id = id
         self.resultados = {}
-
-
 
     def add_resultados(self, encuesta):
         for item in encuesta.get_respuestas():
@@ -20,9 +17,8 @@ class Respuestas(object):
                     self.resultados[id][value] = 1
             else:
                 self.resultados[id] = {
-                        value: 1
+                    value: 1
                 }
-
 
     def _get_data_plot(self, pregunta_id):
         if pregunta_id in self.resultados:
@@ -37,8 +33,6 @@ class Respuestas(object):
                 }
         else:
             return None
-
-
 
     def get_pie(self, pregunta_id):
         raw = self._get_data_plot(pregunta_id)
@@ -59,8 +53,6 @@ class Respuestas(object):
         else:
             return None
 
-
-
     def get_bar(self, pregunta_id):
         raw = self._get_data_plot(pregunta_id)
         if raw:
@@ -71,27 +63,26 @@ class Respuestas(object):
             plt.bar(index, data)
             plt.xticks(index, labels)
             path = '../img/{id}_{pregunta}_bar.png'.format(
-                id=self.id,
-                pregunta=pregunta_id
+                    id=self.id,
+                    pregunta=pregunta_id
             )
             plt.savefig(path)
             return path
         else:
             return None
 
-
     def repost(self):
-        template ='{pregunta} {resposta} {count}'
+        template = '{pregunta} {resposta} {count}'
         salida = template.format(
-            pregunta='*PREGUNTA*'.rjust(10, ' '),
-            resposta='*VALOR*'.rjust(10, ' '),
-            count='*RESPOSTES*'.rjust(10, ' ')
+                pregunta='*PREGUNTA*'.rjust(10, ' '),
+                resposta='*VALOR*'.rjust(10, ' '),
+                count='*RESPOSTES*'.rjust(10, ' ')
         )
         for preg, resp in self.resultados.items():
             for valor, count in resp.items():
                 salida += template.format(
-                    pregunta=preg.rjust(10, ' '),
-                    resposta=valor.rjust(10, ' '),
-                    count=count.rjust(10, ' ')
+                        pregunta=preg.rjust(10, ' '),
+                        resposta=valor.rjust(10, ' '),
+                        count=count.rjust(10, ' ')
                 )
         return salida

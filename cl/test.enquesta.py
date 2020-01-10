@@ -1,15 +1,17 @@
-import sys
-from antlr4 import *
-import pickle
-from EnquestesLexer import EnquestesLexer
-from EnquestesParser import EnquestesParser
-from antlr4.InputStream import InputStream
-from EnquestesVisitor import EnquestesVisitor
-import networkx as nx
-import matplotlib.pyplot as plt
 import importlib
+import pickle
+import sys
+
+import matplotlib.pyplot as plt
+import networkx as nx
+from antlr4 import *
+from antlr4.InputStream import InputStream
+from compilador.EnquestesLexer import EnquestesLexer
+from compilador.EnquestesParser import EnquestesParser
+from compilador.EnquestesVisitor import EnquestesVisitor
+
 enquesta_graph = importlib.machinery.SourceFileLoader('EnquestesGraph',
-                                          'test.EnquestesGraph.py')
+                                                      'test.EnquestesGraph.py')
 genera_graph = enquesta_graph.load_module()
 
 if len(sys.argv) > 1:
@@ -30,4 +32,4 @@ for enq in root['tipos']['ENQUESTA']:
     nx.draw_circular(G, with_labels=True)
     plt.savefig('../img/{id}.png'.format(id=enq))
     plt.show()
-#genera_graph.genera_graph(root)
+# genera_graph.genera_graph(root)

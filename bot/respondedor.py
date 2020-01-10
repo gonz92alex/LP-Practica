@@ -2,7 +2,6 @@ from cl.models.enquesta import Enquesta
 
 
 class EnquestaResposta(Enquesta):
-
     enquesta = None
     respostes = []
 

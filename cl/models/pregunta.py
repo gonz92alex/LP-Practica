@@ -1,10 +1,11 @@
 import networkx as nx
-class Pregunta(object):
 
+
+class Pregunta(object):
     id = None
     pregunta = None
 
-    def __init__(self, id: str, pregunta: str=None, preguntada=None):
+    def __init__(self, id: str, pregunta: str = None, preguntada=None):
         self.id = id
 
         if preguntada:
@@ -18,7 +19,6 @@ class Pregunta(object):
     def get_pregunta(self):
         return self.pregunta
 
-
     def get_id(self):
         return self.id
 
@@ -27,7 +27,6 @@ class Pregunta(object):
 
     def get_alternativa(self):
         return self.alternativa
-
 
     def get_graph(self):
         G = nx.DiGraph()
@@ -38,5 +37,3 @@ class Pregunta(object):
             G = nx.compose(G, I)
             G.add_edge(self.id, item.get_pregunta().get_id())
         return G
-
-

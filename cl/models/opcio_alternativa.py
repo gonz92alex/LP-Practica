@@ -2,7 +2,6 @@ from .item import Item
 
 
 class OpcioAlternativa(object):
-
     def __init__(self, value: int, destino: Item):
         self.value = value
         self.destino = destino
@@ -15,7 +14,6 @@ class OpcioAlternativa(object):
 
     def set_destino(self, destino):
         self.destino = destino
-
 
     def __eq__(self, other):
         try:

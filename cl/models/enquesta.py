@@ -1,5 +1,6 @@
-from .item import Item
 import networkx as nx
+
+from .item import Item
 
 
 class Enquesta(object):
