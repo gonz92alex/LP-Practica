@@ -1,0 +1,7 @@
+/start    -> Inicia el chatbot
+/help     -> Muestra la ayuda del chatbot
+/author   -> Enseña los datos del autor del chatbot
+/quiz <idEnquesta>
+/bar <idPregunta>
+/pie <idPregunta>
+/report
